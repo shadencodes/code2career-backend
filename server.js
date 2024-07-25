@@ -13,6 +13,9 @@ connectDB();
 // Middleware
 app.use(express.json()); // Parse JSON bodies
 
+// Routes
+app.use('/users', userRoutes);
+
 // Basic Route
 app.get('/', (req, res) => {
     res.send('Hello, world!');
