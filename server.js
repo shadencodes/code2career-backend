@@ -5,6 +5,11 @@ const app = express();
 require('dotenv').config();
 const port = process.env.PORT || 5000; // Use environment variable for port, default to 5000
 
+// Connect to MongoDB
+const connectDB = require('./src/config/db');
+const userRoutes = require('./src/routes/users');
+connectDB();
+
 // Middleware
 app.use(express.json()); // Parse JSON bodies
 
